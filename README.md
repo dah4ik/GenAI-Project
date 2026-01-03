@@ -50,7 +50,7 @@ Metric,                               Value
 
 mAP@0.5:                                       0.512,  
 
-Precision:                                     0.485,  
+Precision:                                     0.632,  
 
 Recall:                                        0.548, 
 
