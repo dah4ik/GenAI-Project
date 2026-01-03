@@ -47,8 +47,11 @@ https://drive.google.com/drive/folders/15yNOOc1ldMNk8raNk40rbm8itB03Rnd_?usp=dri
 The performance of the model is measured using standard computer vision benchmarks:
 
 Metric,Value,Description
+
 mAP@0.5,    0.512,  Mean Average Precision at a 0.5 IoU threshold.
+
 Precision,  0.485,  Accuracy in identifying true hazards while minimizing false alarms.
+
 Recall,     0.548,  Effectiveness in capturing dangerous objects (True Positives).
 
 Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115-e857-4fbb-9058-ed2edd862dcb)
