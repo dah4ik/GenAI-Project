@@ -1,50 +1,73 @@
-🔍 Project: Detection of Potentially Dangerous Objects in a Child’s Room
+🛡️ Safeguarding Children's Spaces with AI Vision
 
-This project aims to automatically detect potentially dangerous objects in a children's room using Computer Vision and Generative AI.
-The system identifies hazardous items such as batteries, scissors, pills, cables, and household chemicals based on room images.
+This project focuses on an intelligent computer vision system designed to detect hazardous objects in children's environments before accidents happen, providing peace of mind for parents and caregivers.
+
+📌 The Challenge
+
+Parents and childminders face a constant struggle to identify dangerous objects hidden behind toys or lying on the floor.
+Traditional data collection is limited due to privacy concerns in homes and the ethical impossibility of exposing children to real dangers for photography.
+
+To solve this, we utilize synthetic data generation to create a robust, privacy-preserving training dataset, combining isolated objects and cluttered room scenes.
+
+🚀 Hazard Detection Classes
+
+The focus is on identifying four main classes of hazards:
+
+Sharp Objects – knives and scissors that could cause cuts or puncture wounds 
+
+Choking Hazards – small objects such as coins, small batteries, small balls, and Lego parts that could obstruct airways .
+
+Electrical Hazards –  cables,  adapters, and  sockets.
+
+Chemical Dangers – cleaning products, detergents, or any chemical bottles that could be ingested.
+
+🛠 Methodology & Tools
+Data Annotation and Refinement
+
+To ensure high-quality training data and precise object boundaries, we employed:
+
+CVAT (Computer Vision Annotation Tool) – for professional-grade labeling and managing the synthetic dataset.
+
+SAM (Segment Anything Model) – for enhanced boundary refinement and precise instance segmentation of hazardous objects.
+
+ML Architecture
+
+The system uses cutting-edge object detection models to balance speed and accuracy:
+
+YOLOv8 / YOLOv10 – optimized for real-time detection.
+
+DETR / ViT-Det – transformer-based architectures for comparative analysis.
+
+📊 Synthetic Data Strategy
+
+We use advanced generative models (Stable Diffusion, ControlNet) to simulate various room conditions:
+
+Varied lighting – daylight, nighttime, warm/cool tones.
+
+Camera angles – perspectives from adult height, child height, and wall mounts.
+
+Occlusion – detecting items hidden behind toys, under furniture, or cluttered environments.
+
+Balanced object classes – ensuring equal representation of knives, scissors, coins, batteries, Lego, balls, etc.
+
+📈 Success Metrics
+
+The performance of the model is measured using standard computer vision benchmarks:
+
+mAP (Mean Average Precision)
+
+IoU (Intersection over Union)
+
+F1 Score
+
+Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115-e857-4fbb-9058-ed2edd862dcb)
 
 
+👥 Authors
 
-📌 1. Motivation
+Gonko Daniel
 
-Parents and caregivers cannot constantly monitor every corner of a room. Many dangerous objects are small, hard to notice, or blend into the environment.
-Computer vision can help identify hazardous items and generate warnings before an accident occurs.
+Gavris Svetlana
 
-
-
-📌 2. Project Goal
-
-Build and evaluate object-detection models capable of recognizing hazardous objects in a child’s room, comparing real data vs. synthetic data created using GenAI.
-
-
-
-📌 3. Features
-
-Synthetic image generation of rooms with hazardous objects
-
-Object detection using YOLO
-
-Comparison of datasets (real vs. synthetic vs. mixed)
-
-Clear evaluation metrics (mAP, IoU, F1)
-
-
-⚙️ 4. Installation
-
-You can run the project on:
-
-Google Colab (recommended)
-
-Local machine (Windows/Linux/Mac)
-_________________________________________________________________________________________________________________________________________________________________________
-
-➡️ Install dependencies (Colab or local)
-
-pip install ultralytics diffusers transformers accelerate safetensors opencv-python matplotlib
-
-
-➡️ (Optional) Install PyTorch manually (local only)
-
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-
+Semion Ostrovsky
 
