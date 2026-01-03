@@ -46,13 +46,13 @@ https://drive.google.com/drive/folders/15yNOOc1ldMNk8raNk40rbm8itB03Rnd_?usp=dri
 
 The performance of the model is measured using standard computer vision benchmarks:
 
-Metric,Value,Description
+Metric,                               Value
 
-mAP@0.5,    0.512,  
+mAP@0.5:                                       0.512,  
 
-Precision,  0.485,  
+Precision:                                     0.485,  
 
-Recall,     0.548, 
+Recall:                                        0.548, 
 
 Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115-e857-4fbb-9058-ed2edd862dcb)
 <img width="512" height="466" alt="image" src="https://github.com/user-attachments/assets/4dd5aaa2-9220-4dc2-8f5f-4056c620a7a1" />
