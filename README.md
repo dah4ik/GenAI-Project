@@ -48,11 +48,11 @@ The performance of the model is measured using standard computer vision benchmar
 
 Metric,Value,Description
 
-mAP@0.5,    0.512,  Mean Average Precision at a 0.5 IoU threshold.
+mAP@0.5,    0.512,  
 
-Precision,  0.485,  Accuracy in identifying true hazards while minimizing false alarms.
+Precision,  0.485,  
 
-Recall,     0.548,  Effectiveness in capturing dangerous objects (True Positives).
+Recall,     0.548, 
 
 Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115-e857-4fbb-9058-ed2edd862dcb)
 <img width="512" height="466" alt="image" src="https://github.com/user-attachments/assets/4dd5aaa2-9220-4dc2-8f5f-4056c620a7a1" />
