@@ -42,6 +42,74 @@ DETR / ViT-Det – transformer-based architectures for comparative analysis.
 
 https://drive.google.com/drive/folders/15yNOOc1ldMNk8raNk40rbm8itB03Rnd_?usp=drive_link
 
+🧠 Notebooks Overview
+📘 Creating_and_marking_individual_objects_for_training.ipynb
+
+This notebook focuses on creating isolated object images for each hazard class.
+
+Approximately 100 images per class.
+
+Each image contains a single object on a clean background.
+
+Classes include:
+
+Knives and scissors (Sharp Objects)
+
+Coins, small batteries, small balls, Lego parts (Choking Hazards)
+
+Exposed cables and adapters (Electrical Hazards)
+
+Cleaning and chemical bottles (Chemical Dangers)
+
+These images are used to:
+
+Build a strong base detector.
+
+Enable automatic or semi-automatic labeling.
+
+Reduce the amount of manual annotation required.
+
+🏠 01_generate_images.ipynb
+
+This notebook generates synthetic images of full children’s rooms containing multiple hazardous objects.
+
+Key characteristics:
+
+Cluttered environments with toys and furniture.
+
+Multiple hazard types in the same image.
+
+Different lighting conditions and camera perspectives.
+
+Due to scene complexity, only a selected subset of these images was:
+
+Manually annotated using CVAT.
+
+Used to fine-tune the model for real-world conditions.
+
+🤖 02_train_yolo.ipynb
+
+This notebook contains the full training pipeline for the detection model.
+
+Model: YOLOv8
+
+Input: Combination of
+
+Isolated object images
+
+Selected annotated room scenes
+
+Output:
+
+Trained weights saved in yolo_training/kids_room_hazard/weights/
+
+Validation metrics (Precision, Recall, mAP)
+
+This notebook represents the core learning stage of the project.
+
+📊 Presentation
+📎 Gen_AI_pres.pptx
+
 📈 Success Metrics
 
 The performance of the model is measured using standard computer vision benchmarks:
