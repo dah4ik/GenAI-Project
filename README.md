@@ -38,17 +38,9 @@ YOLOv8 / YOLOv10 – optimized for real-time detection.
 
 DETR / ViT-Det – transformer-based architectures for comparative analysis.
 
-📊 Synthetic Data Strategy
+📊 Synthetic Data 
 
-We use advanced generative models (Stable Diffusion, ControlNet) to simulate various room conditions:
-
-Varied lighting – daylight, nighttime, warm/cool tones.
-
-Camera angles – perspectives from adult height, child height, and wall mounts.
-
-Occlusion – detecting items hidden behind toys, under furniture, or cluttered environments.
-
-Balanced object classes – ensuring equal representation of knives, scissors, coins, batteries, Lego, balls, etc.
+https://drive.google.com/drive/folders/15yNOOc1ldMNk8raNk40rbm8itB03Rnd_?usp=drive_link
 
 📈 Success Metrics
 
