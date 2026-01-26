@@ -130,7 +130,7 @@ Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115
 
 👥 Authors
 
-Gonko Daniel
+Gunko Daniel
 
 Gavris Svetlana
 
