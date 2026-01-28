@@ -126,7 +126,6 @@ Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115
 <img width="512" height="466" alt="image" src="https://github.com/user-attachments/assets/4dd5aaa2-9220-4dc2-8f5f-4056c620a7a1" />
 <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/d919f224-34a0-41d1-89e3-62aaf693bc5c" />
 
-<img width="2250" height="1500" alt="BoxP_curve" src="https://github.com/user-attachments/assets/12b29033-6543-40e2-b517-33eb003d395f" />
 
 👥 Authors
 
