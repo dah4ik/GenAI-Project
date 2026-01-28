@@ -40,7 +40,7 @@ DETR / ViT-Det – transformer-based architectures for comparative analysis.
 
 📊 Synthetic Data 
 
-https://drive.google.com/drive/folders/15yNOOc1ldMNk8raNk40rbm8itB03Rnd_?usp=drive_link
+https://drive.google.com/drive/folders/1l5Z_nOrOzY2A1oY6fY6Cm-P2j8FH6YBf?usp=sharing
 
 🧠 Notebooks Overview
 📘 Creating_and_marking_individual_objects_for_training.ipynb
