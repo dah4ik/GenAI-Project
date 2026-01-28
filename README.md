@@ -123,7 +123,7 @@ Precision:                                     0.632,
 Recall:                                        0.548, 
 
 Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115-e857-4fbb-9058-ed2edd862dcb)
-<img width="512" height="466" alt="image" src="https://github.com/user-attachments/assets/4dd5aaa2-9220-4dc2-8f5f-4056c620a7a1" />
+
 <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/d919f224-34a0-41d1-89e3-62aaf693bc5c" />
 
 
