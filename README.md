@@ -1,137 +1,106 @@
-🛡️ Safeguarding Children's Spaces with AI Vision
+# Safeguarding Children's Spaces with AI Vision 🚀
 
-This project focuses on an intelligent computer vision system designed to detect hazardous objects in children's environments before accidents happen, providing peace of mind for parents and caregivers.
+An intelligent computer vision system designed to detect hazardous objects in children's environments before accidents happen, providing peace of mind for parents and caregivers.
 
-📌 The Challenge
+## 📂 Project Resources (Google Drive)
+*Link to 2,000+ generated images and saved YOLOv8/v10 weights and exports.
+* **[Full Synthetic Dataset]** —https://drive.google.com/drive/folders/1l5Z_nOrOzY2A1oY6fY6Cm-P2j8FH6YBf?usp=sharing 
 
-Parents and childminders face a constant struggle to identify dangerous objects hidden behind toys or lying on the floor.
-Traditional data collection is limited due to privacy concerns in homes and the ethical impossibility of exposing children to real dangers for photography.
 
-To solve this, we utilize synthetic data generation to create a robust, privacy-preserving training dataset, combining isolated objects and cluttered room scenes.
+---
 
-🚀 Hazard Detection Classes
+## 👥 Project Team
+* **Daniel Gonko**
+* **Svetlana Gavris**
+* **Semyon Ostrovsky**
 
-The focus is on identifying four main classes of hazards:
+---
 
-Sharp Objects – knives and scissors that could cause cuts or puncture wounds 
+## 📌 The Challenge
+Parents and childminders face a constant struggle to identify dangerous objects hidden behind toys or lying on the floor. Traditional data collection is limited due to:
+* **Privacy Concerns:** Collecting real images from private homes is invasive.
+* **Ethical Barriers:** Exposing children to real dangers for photography is unacceptable.
+* **Data Scarcity:** No existing open dataset focuses specifically on household hazards in children's rooms.
 
-Choking Hazards – small objects such as coins, small batteries, small balls, and Lego parts that could obstruct airways .
+We utilize **Synthetic Data Generation (SDXL)** to create a robust, privacy-preserving training dataset.
 
-Electrical Hazards –  cables,  adapters, and  sockets.
+---
 
-Chemical Dangers – cleaning products, detergents, or any chemical bottles that could be ingested.
+## 🚀 Hazard Detection Classes
+The system is trained to identify four critical categories:
+1. **Choking Hazards** – Coins, small batteries,  and Lego parts.
+2. **Sharp Objects** – Knives and scissors.
+3. **Electrical Hazards** – Cables, adapters, and open sockets.
+4. **Chemical Dangers** – Cleaning products, detergents, and chemical bottles.
 
-🛠 Methodology & Tools
-Data Annotation and Refinement
+---
 
-To ensure high-quality training data and precise object boundaries, we employed:
+## 🖼 Data Generation Examples
+Samples of synthetic environments and individual objects created for the training pipeline.
 
-CVAT (Computer Vision Annotation Tool) – for professional-grade labeling and managing the synthetic dataset.
+| Synthetic Room Scene | Isolated Hazard Objects |
+| :---: | :---: |
+|![photo_2026-01-03_16-34-26](https://github.com/user-attachments/assets/4db4d844-ef44-4645-ae07-f8e6f0a479ce)|<img width="642" height="643" alt="image" src="https://github.com/user-attachments/assets/dd665eea-ea20-4101-a2ad-ce15d8debb11" />|
+| *SDXL generated room with hidden hazards*
+Sample prompt for this image:"Photorealistic nursery room, sharp scissors and a kitchen knife on a table, realistic shadows"| *100+ images per class for base detection* |
 
-SAM (Segment Anything Model) – for enhanced boundary refinement and precise instance segmentation of hazardous objects.
+---
 
-ML Architecture
+## 📊 Experimental Results & Comparison
 
-The system uses cutting-edge object detection models to balance speed and accuracy:
+### 1. Synthetic-Only Model
+*Trained exclusively on 2,000+ AI-generated images.*
 
-YOLOv8 / YOLOv10 – optimized for real-time detection.
+| Confusion Matrix (Synthetic) | Training Curves (Synthetic) |
+| :---: | :---: |
+|<img width="860" height="645" alt="image" src="https://github.com/user-attachments/assets/37ee9b72-7b41-4b73-b4da-ba82d68e764d" />|<img width="998" height="499" alt="image" src="https://github.com/user-attachments/assets/6bd9c8b1-d57b-4493-ba70-7c70ca2000c6" />|
 
-DETR / ViT-Det – transformer-based architectures for comparative analysis.
+**Analysis:** Shows the baseline performance and initial ability to recognize hazard shapes in clean environments.
+| Output examples for individual objects | Output examples for room |
+| :---: | :---: |
+<img width="1200" height="1352" alt="image" src="https://github.com/user-attachments/assets/3491e7e0-c118-499e-bfeb-52f351336a9b" /> | <img width="1157" height="1156" alt="image" src="https://github.com/user-attachments/assets/a5f4e6a3-9dad-4958-bab6-f913486cd377" />
 
-📊 Synthetic Data 
 
-https://drive.google.com/drive/folders/1l5Z_nOrOzY2A1oY6fY6Cm-P2j8FH6YBf?usp=sharing
 
-🧠 Notebooks Overview
-📘 Creating_and_marking_individual_objects_for_training.ipynb
+### 2. Hybrid Model (SDXL + Real Objects)
+*Trained on a combination of synthetic scenes and real-world object photos from Roboflow.*
 
-This notebook focuses on creating isolated object images for each hazard class.
+| Confusion Matrix (Hybrid) | Training Curves (Hybrid) |
+| :---: | :---: |
+|<img width="932" height="699" alt="image" src="https://github.com/user-attachments/assets/f91989f8-93ab-41fb-adf6-f99a0fa188b4" />|<img width="1109" height="481" alt="image" src="https://github.com/user-attachments/assets/562f9996-065c-4558-aae9-9e78d48d72fa" /> |
 
-Approximately 100 images per class.
+| Output examples for individual objects | Output examples for room |
+| :---: | :---: |
+<img width="1350" height="1350" alt="image" src="https://github.com/user-attachments/assets/bdf597f8-707d-493d-af3b-e17d4cb1f96a" /> | <img width="790" height="812" alt="Без названия (4)" src="https://github.com/user-attachments/assets/606d482c-255d-4291-97b8-aa64001e6ba6" />
 
-Each image contains a single object on a clean background.
 
-Classes include:
+| Metric | Synthetic-Only Model | Hybrid Model (Final) |
+| :--- | :---: | :---: |
+| **mAP50** | 0.40 | **0.90** |
+| **F1-Score** | 0.39 | **0.90** |
 
-Knives and scissors (Sharp Objects)
+**Conclusion:**
+• AI-based computer vision can effectively detect hazards in children’s rooms
 
-Coins, small batteries, small balls, Lego parts (Choking Hazards)
+• Synthetic data helps address privacy and ethical concerns, but works best when combined with real data
 
-Exposed cables and adapters (Electrical Hazards)
+• Hybrid models significantly improve detection accuracy and reduce false positives
 
-Cleaning and chemical bottles (Chemical Dangers)
+• Separating object detection from hazard classification creates a modular and explainable system
 
-These images are used to:
+• The proposed solution has strong potential for real-world use in smart homes and child safety systems
 
-Build a strong base detector.
+<img width="1664" height="441" alt="image" src="https://github.com/user-attachments/assets/5375721c-963b-4a8b-8feb-d2445140a931" />
 
-Enable automatic or semi-automatic labeling.
+<img width="1664" height="441" alt="image" src="https://github.com/user-attachments/assets/690508d2-eae6-4b9b-b763-49ed7238fa48" />
 
-Reduce the amount of manual annotation required.
 
-🏠 01_generate_images.ipynb
+---
 
-This notebook generates synthetic images of full children’s rooms containing multiple hazardous objects.
-
-Key characteristics:
-
-Cluttered environments with toys and furniture.
-
-Multiple hazard types in the same image.
-
-Different lighting conditions and camera perspectives.
-
-Due to scene complexity, only a selected subset of these images was:
-
-Manually annotated using CVAT.
-
-Used to fine-tune the model for real-world conditions.
-
-🤖 02_train_yolo.ipynb
-
-This notebook contains the full training pipeline for the detection model.
-
-Model: YOLOv8
-
-Input: Combination of
-
-Isolated object images
-
-Selected annotated room scenes
-
-Output:
-
-Trained weights saved in yolo_training/kids_room_hazard/weights/
-
-Validation metrics (Precision, Recall, mAP)
-
-This notebook represents the core learning stage of the project.
-
-📊 Presentation
-📎 Gen_AI_pres.pptx
-
-📈 Success Metrics
-
-The performance of the model is measured using standard computer vision benchmarks:
-
-Metric,                               Value
-
-mAP@0.5:                                       0.512,  
-
-Precision:                                     0.632,  
-
-Recall:                                        0.548, 
-
-Results:![val_batch1_labels](https://github.com/user-attachments/assets/5f946115-e857-4fbb-9058-ed2edd862dcb)
-
-<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/d919f224-34a0-41d1-89e3-62aaf693bc5c" />
-
-
-👥 Authors
-
-Gunko Daniel
-
-Gavris Svetlana
-
-Semion Ostrovsky
-
+## 📂 Repository Structure
+* **`01_generate_images.ipynb`**: SDXL-based room generation pipeline.
+* **`Creating and marking individual...`**: Object isolation and auto-labeling for only syntetic train.
+* **`only_syntetic_train_yolo.ipynb`**: Baseline YOLO training.
+* **`hybrid_model.ipynb`**: Advanced training with mixed datasets.
+* **`First/Second/Third Presentation.pptx`**: Interim reports on the development progress.
+* **`Final Presentation.pptx`**: Comprehensive project summary.
