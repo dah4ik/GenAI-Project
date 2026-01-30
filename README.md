@@ -90,9 +90,6 @@ Sample prompt for this image:"Photorealistic nursery room, sharp scissors and a 
 
 • The proposed solution has strong potential for real-world use in smart homes and child safety systems
 
-<img width="1664" height="441" alt="image" src="https://github.com/user-attachments/assets/5375721c-963b-4a8b-8feb-d2445140a931" />
-
-<img width="1664" height="441" alt="image" src="https://github.com/user-attachments/assets/690508d2-eae6-4b9b-b763-49ed7238fa48" />
 
 
 ---
